@@ -1,16 +1,24 @@
 from django.contrib import admin
 from django.urls import path, include
-from school.views import StudentsViewset, CoursesViewset
+from school.views import StudentsViewset, CoursesViewset, RegistrationViewset
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('students', StudentsViewset, basename='Students')
 router.register('courses', CoursesViewset, basename='Courses')
+router.register ('registrations', RegistrationViewset, basename='Registrations')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(router.urls))
 ]
+
+
+
+
+
+
+
 
 #that's the idea of the API through some different addresses/URLS we wanna make available
 # some different functionalities
