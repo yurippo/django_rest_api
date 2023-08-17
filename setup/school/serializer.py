@@ -17,6 +17,26 @@ class RegistrationSerializer(serializers.ModelSerializer):
         model= Registration
         exclude =[]
 
+
+class ListRegistrationSerializer(serializers.ModelSerializer):
+     course = serializers.ReadOnlyField(source='course.description')
+     period = serializers.SerializerMethodField()
+     class Meta:
+          model= Registration
+          fields= ['course','period']
+
+     def get_period(self,obj):
+         return obj.get_period_display()   
+     
+class ListStudentsRegisteredSerializer(serializers.ModelSerializer):
+    student_name = serializers.ReadOnlyField(source='student.name')
+    class Meta:
+          model = Registration
+          fields = ['student_name']
+
+
+
+
 # Para manter os dados armazenados no banco de dados, criamos um modelo e executamos a migração.
 
 # Sabendo disso, para entregar os dados armazenados no banco de dados no formato Json por exemplo ou receber um Json para salvar no banco de dados, o que devemos fazer?
