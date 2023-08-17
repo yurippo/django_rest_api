@@ -74,3 +74,8 @@ class ListRegisteredStudent(generics.ListAPIView):
 
 # Ainda h� muito conte�do para estudar sobre APIs, valida��es e testes. Clicando no link do Django REST Framework no topo da p�gina da nossa API,
 #  podemos abrir a documenta��o e consultar mais informa��es sobre desenvolvimento de API com essa ferramenta.
+# Neste projeto, todas as barreiras foram vencidas, desenvolvemos uma API em Python com o Django Rest Framework.
+
+# Criamos os modelos, serializers, viewsets, configuramos as urls, vinculamos o Admin do Django com a API, realizamos diversas requisi��es no Postman e incluimos autentica��o para disponibilizar os recursos.
+
+# Muito legal!
